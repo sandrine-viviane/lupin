@@ -1,0 +1,17 @@
+## Method adapted from UNH lab 4
+yp_data <- read.csv("SDlluteus_rev.csv")
+
+# read in, inspect, re-classify data
+yp_data$treatment <- as.factor(yp_data$treatment)
+str(yp_data$treatment)
+
+# Run ANOVA for outcome
+yp_model <- lm(lwatpot ~ treatment, yp_data)
+anova(yp_model)
+
+## Assign contrast coef
+# Contrast 'ecotype'     
+# Contrast 'temp linear'
+# Contrast 'temp quadratic'
+# Contrast 'ecotype * temp linear'
+# Contrast 'ecotype * temp quadratic'
